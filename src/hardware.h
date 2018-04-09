@@ -14,7 +14,8 @@
 #define PIN_OFFSETY  7
 
 //2) Lasers
-#define FREQ_PWM 40000
+#define FREQ_PWM 40000  // This will set the PWM pins frequency to 40kHz, resulting in an 11 bit resolution
+#define MAX_DUTY_CYCLE  2047 // 2^11-1 = 2048
 #define PIN_SWITCH_RED  36 // we could use just PWM, but it is better to have a digital "switch"
 #define PIN_PWM_RED 2 // PWM capable [DUE pwm capable pin: 2 to 13]
 
