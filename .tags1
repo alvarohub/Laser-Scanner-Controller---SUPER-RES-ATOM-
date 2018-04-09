@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Scanner	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^namespace Scanner {$/;"	namespace	line:3	file:
+scannerBuffer1	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    PointBuffer scannerBuffer1, scannerBuffer2;$/;"	member	line:6	namespace:Scanner	file:
+scannerBuffer2	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    PointBuffer scannerBuffer1, scannerBuffer2;$/;"	member	line:6	namespace:Scanner	file:
+ptrCurrentBuffer	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    PointBuffer *ptrCurrentBuffer, *ptrNonDisplayingBuffer, *ptrAux;$/;"	member	line:7	namespace:Scanner	file:
+ptrNonDisplayingBuffer	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    PointBuffer *ptrCurrentBuffer, *ptrNonDisplayingBuffer, *ptrAux;$/;"	member	line:7	namespace:Scanner	file:
+ptrAux	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    PointBuffer *ptrCurrentBuffer, *ptrNonDisplayingBuffer, *ptrAux;$/;"	member	line:7	namespace:Scanner	file:
+readingHead	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    uint16_t readingHead, sizeBuffers, newSizeBuffers;$/;"	member	line:8	namespace:Scanner	file:
+sizeBuffers	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    uint16_t readingHead, sizeBuffers, newSizeBuffers;$/;"	member	line:8	namespace:Scanner	file:
+newSizeBuffers	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    uint16_t readingHead, sizeBuffers, newSizeBuffers;$/;"	member	line:8	namespace:Scanner	file:
+canSwapFlag	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    bool canSwapFlag, resizeFlag;$/;"	member	line:9	namespace:Scanner	file:
+resizeFlag	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    bool canSwapFlag, resizeFlag;$/;"	member	line:9	namespace:Scanner	file:
+blankingFlag	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    bool blankingFlag; \/\/ inter-point laser on\/off (true means off or "blankingFlag")$/;"	member	line:12	namespace:Scanner	file:
+initScanners	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void initScanners() {$/;"	function	line:14	namespace:Scanner	signature:()
+startScan	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void startScan() {$/;"	function	line:39	namespace:Scanner	signature:()
+stopScan	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void stopScan() {$/;"	function	line:42	namespace:Scanner	signature:()
+pauseScan	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void pauseScan() {scannerTimer.pause();}$/;"	function	line:47	namespace:Scanner	signature:()
+resumeScan	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void resumeScan() {scannerTimer.resume();}$/;"	function	line:48	namespace:Scanner	signature:()
+stopSwapping	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void stopSwapping() {canSwapFlag=false;}$/;"	function	line:50	namespace:Scanner	signature:()
+startSwapping	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void startSwapping() {canSwapFlag=true;}$/;"	function	line:51	namespace:Scanner	signature:()
+resizeBuffer	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void resizeBuffer(uint16_t _newSize) {$/;"	function	line:53	namespace:Scanner	signature:(uint16_t _newSize)
+setInterPointTime	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void setInterPointTime(uint16_t _dt) {$/;"	function	line:58	namespace:Scanner	signature:(uint16_t _dt)
+setBlankingRed	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void setBlankingRed(bool _newBlankState) {$/;"	function	line:61	namespace:Scanner	signature:(bool _newBlankState)
+writeOnHiddenBuffer	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void writeOnHiddenBuffer(uint16_t _absIndex, P2& _point) {$/;"	function	line:65	namespace:Scanner	signature:(uint16_t _absIndex, P2& _point)
+displayISR	/Users/alvaro/Dropbox/ABBELIGHT/ALVARO CODE/laserScanControl_ATOM/src/scannerDisplay.cpp	/^    void displayISR() {$/;"	function	line:74	namespace:Scanner	signature:()
