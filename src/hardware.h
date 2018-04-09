@@ -102,11 +102,9 @@ namespace Hardware {
 			digitalWrite(_pin, _state);
 		}
 
-
 		// Change PWM frequency and resolution to 11bits on all 8 PWM timers - by default
 		// they are set to 1kHz?:
 		extern void setPWMFreq(uint16_t _freq);
-
 	}
 
 	// ========= OTHERS:

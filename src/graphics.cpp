@@ -14,6 +14,7 @@ namespace Graphics {
 	void setAngle(const float _angle) {
 		Renderer2D::angle = _angle;
 	}
+	
 	void setScaleFactor(const float _scaleFactor) {
 		Renderer2D::scaleFactor = _scaleFactor;
 	}
