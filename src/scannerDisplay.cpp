@@ -18,13 +18,8 @@ namespace DisplayScan {
         // Init hardware stuff:
         Hardware::Scanner::init();
 
-        // 1) Analog resolution:
-        // 	a) for DACS: fixed DAC0/1 are hardware DACs with 12 bit resolution (0 to 4065)
-        // 	b) for analog PWM offsets:
-        analogWriteResolution(12);// is done in the main using a method defined in Utils.h ?
 
-        // 2) set the displaying buffer pointer to the first ring buffer, and set swapping flags:
-
+        // Set the displaying buffer pointer to the first ring buffer, and set swapping flags:
         displayBuffer1[0]=P2(CENTER_MIRROR_ADX, CENTER_MIRROR_ADY);
         displayBuffer2[0]=P2(CENTER_MIRROR_ADX, CENTER_MIRROR_ADY);
         sizeBuffers = newSizeBuffers = 0;
@@ -39,7 +34,7 @@ namespace DisplayScan {
         setInterPointTime(DEFAULT_RENDERING_INTERVAL);
 
         // 3) Set interrupt routine (NOTE: "scannerTimer" is a #define using Timer1)
-        scannerTimer.attachInterrupt(displayISR);
+        scannerTimer.begin(displayISR, microseconds);
         stopDisplay();
     }
 

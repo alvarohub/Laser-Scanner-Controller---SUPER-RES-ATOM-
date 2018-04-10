@@ -7,15 +7,17 @@
 // ************************* GPIO PINS DEFINITION ********************************
 // 1) Mirrors:
 //  a) "real" DAC, 12 bit resolution
-#define PIN_ADCX	DAC0
-#define PIN_ADCY	DAC1
+// On Teensy Teensy 3.5 and 3.6 the native DACs are on pins A21 and A22), A14 on the
+// Teensy 3.1/3.2, and A12 on the Teensy LC.
+#define PIN_ADCX	A21
+#define PIN_ADCY	A22
 //  b) PWM pins to do hardware offset (can be set near 0 and calibrate center by softare...)
 #define PIN_OFFSETX  8
 #define PIN_OFFSETY  7
 
 //2) Lasers
 #define FREQ_PWM 40000  // This will set the PWM pins frequency to 40kHz, resulting in an 11 bit resolution
-#define MAX_DUTY_CYCLE  2047 // 2^11-1 = 2048
+#define MAX_DUTY_CYCLE  2047 // 2^11-1 = 2047
 #define PIN_SWITCH_RED  36 // we could use just PWM, but it is better to have a digital "switch"
 #define PIN_PWM_RED 2 // PWM capable [DUE pwm capable pin: 2 to 13]
 
@@ -25,9 +27,9 @@
 
 // ************************* CONSTANT HARDWARE PARAMETERS ******************************
 #define MAX_MIRRORS_ADX	4095
-#define MIN_MIRRORS_ADX	1
+#define MIN_MIRRORS_ADX	0
 #define MAX_MIRRORS_ADY 4095
-#define MIN_MIRRORS_ADY 1
+#define MIN_MIRRORS_ADY 0
 
 // NOTE: there are two methods to produce the offset. One is to set a numeric ADC offset,
 // the other is to use two analog pins (PWM) and op-amps. In BOTH cases we have have half the
@@ -35,6 +37,10 @@
 // code corresponds to setting OFFSETADX/Y to 0).
 #define CENTER_MIRROR_ADX  2047
 #define CENTER_MIRROR_ADY  2047
+
+// LASER (in ADC units):
+#define MAX_LASER_POWER 4095 // we can limit this!
+// (min is 0)
 
 //  ============ LOW LEVEL HARDWARE METHODS ================================
 // * NOTE 1: make the critic code inline!
@@ -85,7 +91,8 @@ namespace Hardware {
 
 		// Low level ADC test (also visual scanner range check).
 		// NOTE: this method does not uses any buffer, so it should be
-		// called when the DisplayScan is paused or stopped [if this is // not done, it should work anyway but with a crazy back and forth
+		// called when the DisplayScan is paused or stopped [if this is
+		// not done, it should work anyway but with a crazy back and forth
 		// of the galvano mirrors:
 		extern void testMirrorRange(uint16_t _durationMs);
 		extern void testCircleRange(uint16_t _durationMs);
@@ -103,9 +110,13 @@ namespace Hardware {
 			digitalWrite(_pin, _state);
 		}
 
-		// Change PWM frequency and resolution to 11bits on all 8 PWM timers - by default
-		// they are set to 1kHz?:
+		// Change PWM frequency:
 		extern void setPWMFreq(uint16_t _freq);
+
+		// Change PWM duty cycle: just use analogWrite() on Teensy. I will wrap it because we may need
+		// to change the hardware, plus this will not be called very often (it is not the laser ON/OFF, but
+		// it's power):
+		inline void setPWMDuty(uint8_t _pin, uint16_t _duty) {analogWrite(_pin, _duty);}
 	}
 
 	// ========= OTHERS:

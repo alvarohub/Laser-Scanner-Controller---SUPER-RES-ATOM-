@@ -3,6 +3,8 @@
   Author: Alvaro Cassinelli
 
   Version:
+    [10/4/2018] MAJOR CHANGE: changing from the DUE to the Teensy (DUE Dacs are poorly documented and the libraries to set the
+                PWM frequencies on the other pins either interfere with the dacs or don't work properly.
     [3/4/2018] Quick version not using classes but already having some important features:
     ++NEW:
         + New robust non-blocking Serial protocol commands
@@ -20,7 +22,6 @@
 */
 
 // INCLUDES (in Arduino framework, we need to #include the libs in the "main" compile unit too...)
-#include "DueTimer.h"// to PWM frequency and timer interrupts
 #include "Utils.h"                 // wrappers for low level methods and other things
 #include "Class_P2.h"
 #include "hardware.h"
@@ -34,13 +35,12 @@ void setup() {
   initSerialCom();
   PRINTLN(">>REBOOTING... ");
 
-
   // ===== INIT HARDWARE
   Hardware::init();
 
   // ===== INIT DISPLAY ENGINE (default is stand by)
   DisplayScan::init();
-  
+
   // Check FREE RAM in DEBUG mode:
   //PRINT("Free RAM: "); PRINT(Utils::freeRam()); PRINTLN(" bytes");
 

@@ -5,7 +5,6 @@
 // Therefore, I need to declare everything with external linkage (using "extern" keyword in its declaration)
 
 #include "Arduino.h"
-#include "DueTimer.h" // This library is for setting the displaying timer interrupt
 #include "Class_P2.h"
 #include "scannerDisplay.h"
 //#include "hardware.h"
